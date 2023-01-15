@@ -37,12 +37,12 @@ distribudas.sort(comparador);
 for (let index = 0; index < NumeroDeCartas; index++) {
     tabuleiro.innerHTML += `
     <li>
-        <div class="card" onclick="SelecionadorDeCarta(this)">
+        <div class="card" data-test="card" onclick="SelecionadorDeCarta(this)">
             <div class="front-face face">
-                <img src="./imagens/Papagaio.png" alt="imagen não encontrada">
+                <img data-test="face-down-image" src="./imagens/Papagaio.png" alt="imagen não encontrada">
             </div>
             <div class="back-face face">
-                <img src="./imagens/${distribudas[index]}" alt="imagen não encontrada">
+                <img data-test="face-up-image" src="./imagens/${distribudas[index]}" alt="imagen não encontrada">
             </div>
         </div>
     </li>

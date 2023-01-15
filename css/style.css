@@ -75,5 +75,26 @@ img{
         font-size: 36px;
         line-height: 42px;
     }
+    ul{
+        justify-content: center;
+        align-items: center;
+        margin: 0 80px;
+    }
+    .JogoCom4x{
+        justify-content: center;
+        align-items: center;
+        margin: 0 80px;
+    }
+    .JogoCom10{
+        justify-content: center;
+        align-items: center;
+        margin: 0 80px;
+    }
+    .JogoCom14{
+        justify-content: center;
+        align-items: center;
+        margin: 0 80px;
+    }
+
 }
 
