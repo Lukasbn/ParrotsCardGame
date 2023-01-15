@@ -6,6 +6,7 @@ let distribudas = [];
 imagens.sort(comparador);
 let contador = 0;
 const tabuleiro = document.querySelector("ul");
+let ponto = 0;
 
 
 while (NumeroDeCartas < 4 || NumeroDeCartas > 14 || (NumeroDeCartas%2) !== 0) {
@@ -15,6 +16,14 @@ while (NumeroDeCartas < 4 || NumeroDeCartas > 14 || (NumeroDeCartas%2) !== 0) {
 if (NumeroDeCartas == 14) {
     let alinhar = document.querySelector("ul");
     alinhar.classList.add("JogoCom14")
+}
+if (NumeroDeCartas == 8 || NumeroDeCartas == 4) {
+    let alinhar = document.querySelector("ul");
+    alinhar.classList.add("JogoCom4x")
+}
+if (NumeroDeCartas == 10) {
+    let alinhar = document.querySelector("ul");
+    alinhar.classList.add("JogoCom10")
 }
 
 while (distribudas.length < NumeroDeCartas){
@@ -30,7 +39,7 @@ for (let index = 0; index < NumeroDeCartas; index++) {
     <li>
         <div class="card" onclick="SelecionadorDeCarta(this)">
             <div class="front-face face">
-                <img src="./imagens/back.png" alt="imagen não encontrada">
+                <img src="./imagens/Papagaio.png" alt="imagen não encontrada">
             </div>
             <div class="back-face face">
                 <img src="./imagens/${distribudas[index]}" alt="imagen não encontrada">
@@ -54,9 +63,12 @@ function Comparador(){
         if (ParVirado[0].children[1].children[0].getAttribute("src") !== ParVirado[1].children[1].children[0].getAttribute("src")) {
             setTimeout(remover,1000,ParVirado[0]);
             setTimeout(remover,1000,ParVirado[1]);
+        }else{
+            ponto ++;
         }
         ParVirado = [];
         jogadas = jogadas + 2;
+        finalizar();
     }
 }
 
@@ -66,4 +78,11 @@ function remover(parametro){
 
 function comparador() { 
 	return Math.random() - 0.5; 
+}
+
+function finalizar(){
+    if (ponto === (NumeroDeCartas/2)) {
+        setTimeout(alert,50,`Você ganhou em ${jogadas} jogadas!`)
+        
+    }
 }

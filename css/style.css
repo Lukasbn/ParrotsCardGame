@@ -14,7 +14,6 @@ h1{
     text-align: center;
 }
 ul{
-    background-color: aqua;
     margin: 0 170px;
     display: flex;
     justify-content: space-evenly;
@@ -23,8 +22,13 @@ ul{
 .JogoCom14{
     margin: 0 120px;
 }
+.JogoCom10{
+    margin: 0 250px;
+}
+.JogoCom4x{
+    margin: 0 300px;
+}
 li {
-    background-color: black;
     width: 130px;
     height: 180px;
 }
